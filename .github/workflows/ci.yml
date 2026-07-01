@@ -13,6 +13,14 @@ jobs:
       - name: baixar codigo
         uses: actions/checkout@v4
 
+      - name: configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          
+      - name: instalar dependências
+        run: npm install    
+
       - name: verificar arquivos
         run:
           echo" Projeto recebido"
@@ -21,4 +29,3 @@ jobs:
       - name: Finalizado
         run: echo "Pipeline executado com sucesso!"
 
-        
